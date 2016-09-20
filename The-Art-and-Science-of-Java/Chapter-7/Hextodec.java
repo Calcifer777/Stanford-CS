@@ -1,7 +1,7 @@
 /* Converts number from hexadecimal to decimal form.
  * 
  *  The art and science of Java, chapter 7.
- *  */
+ */
 
 import acm.program.*;
 
