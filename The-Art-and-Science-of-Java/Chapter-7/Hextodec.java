@@ -1,11 +1,11 @@
-/* Converts number from hexadecimal to decimal form.
+/* Converts numbers from hexadecimal to decimal form.
  * 
- *  The art and science of Java, chapter 7.
+ * The art and science of Java, chapter 7.
  */
 
 import acm.program.*;
 
-public class Hextodec extends ConsoleProgram{
+public class Hextodec extends ConsoleProgram {
 	
 	public void run() {
 		
