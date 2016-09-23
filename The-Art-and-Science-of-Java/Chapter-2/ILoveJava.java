@@ -2,7 +2,7 @@
 
 /* This toy program prints either as java applet or java 
  * application the "Hello, world" string
- * */
+ */
 
 import acm.graphics.*;
 import acm.program.*;
