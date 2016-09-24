@@ -37,12 +37,8 @@ public class OlympicCircles extends GraphicsProgram {
 		greenc.setColor(Color.green);
 		add(greenc);
 		
-		
-		
-		
-		
-	}
 	
+	}
 	
 	/** Method that allows to set a thickness of the 
 	 * objects in the GOval class.
@@ -52,12 +48,12 @@ public class OlympicCircles extends GraphicsProgram {
 	 * @param thickness The thickness in pixels of the circle.
 	 */
 	
-	
 	private GCompound GOvalExtended(double x, double y, double size, int thickness ) {
 		
 		GCompound circle = new GCompound();
 
 		for (int i =0 ; i<thickness ; i++) {
+		
 			circle.add(new GOval(i,i,size-2*i,size-2*i));
 			
 		}
