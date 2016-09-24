@@ -27,12 +27,12 @@ public class OlympicCircles extends GraphicsProgram {
 		redc.setColor(Color.red);
 		add(redc);
 		
-		GCompound yellowc = GOvalExtended( bluec.getX()+CIRCLE_DIAMETER/2, bluec.getY()+CIRCLE_DIAMETER/2 ,
+		GCompound yellowc = GOvalExtended( (blackc.getX()+bluec.getX())/2, bluec.getY()+CIRCLE_DIAMETER/2 ,
 				CIRCLE_DIAMETER, CIRCLE_THICKNESS);
 		yellowc.setColor(Color.yellow);
 		add(yellowc);
 		
-		GCompound greenc = GOvalExtended( blackc.getX()+CIRCLE_DIAMETER/2, blackc.getY()+CIRCLE_DIAMETER/2 ,
+		GCompound greenc = GOvalExtended( (redc.getX()+blackc.getX())/2, blackc.getY()+CIRCLE_DIAMETER/2 ,
 				CIRCLE_DIAMETER, CIRCLE_THICKNESS);
 		greenc.setColor(Color.green);
 		add(greenc);
