@@ -11,7 +11,10 @@ public class Interest extends ConsoleProgram {
 		println("Interest calculation program.");
 		double balance0 = readDouble("Enter starting balance: ");
 		double interest = readDouble("Enter annual interest rate: ");
-		println("Balance after one year: "+(balance0*(1+interest)));
+		double balance1 = balance0*(1+interest);
+		double balance2 = balance1*(1+interest);
+		println("Balance after one year: "+ balance1+".");
+		println("Balance after two years: "+ balance2+".");
 	}
 
 }
