@@ -7,7 +7,7 @@
 import acm.program.*;
 import acm.graphics.*;
 
-public class DeweyDefeatsHuman extends GraphicsProgram{
+public class DeweyDefeatsTruman extends GraphicsProgram{
 
 	public void run() {
 		
@@ -34,8 +34,8 @@ public class DeweyDefeatsHuman extends GraphicsProgram{
 		
 	}
 	
-	private static final int PAUSE_TIME = 10;
-	private static final String LABEL = "DEWEY DEFEATS HUMAN";
+	private static final int PAUSE_TIME = 5;
+	private static final String LABEL = "DEWEY DEFEATS TRUMAN";
 	private static final int WINDOW_WIDTH = 800;
 	private static final int DX = -1;
 }
