@@ -53,7 +53,7 @@ public class BouncingBall extends GraphicsProgram {
 	private static final int BALL_DIAMETER = 40;
 	private static final int WINDOW_HEIGHT= 450;
 	private static final int WINDOW_WIDTH = 800;
-	private static final double PAUSE_TIME = 20;
+	private static final double PAUSE_TIME = 5;
 	private static final int DX = 1;
 	private static final int DY = 1;
 }
