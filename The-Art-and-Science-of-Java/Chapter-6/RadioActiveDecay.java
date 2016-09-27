@@ -7,30 +7,41 @@
 import acm.program.*;
 import acm.util.*;
 
-public class DecayingAtoms extends ConsoleProgram {
+public class RadioActiveDecay extends ConsoleProgram {
+	
 	public void run() {
+	
 		int atomsRemaining=INITIALATOMS;
+		
 		println("There are "+INITIALATOMS+" initially.");
+		
 		int year=0;
+		
 		while (atomsRemaining>0) {
+		
 			int annualDecay=0;
+			
 			for (int i=1; i<=atomsRemaining; i++) {
+			
 				if (rgen.nextBoolean(DECAYRATE)) {
 					annualDecay++;
 				}
 			}
+			
 			atomsRemaining-=annualDecay;
 			year++;
 			print("There are "+atomsRemaining+" at ");
 			println("the end of year "+year+".");
-			}
 			
-		
 		}
+			
+	}
 	
 	/* Creating an instance of the RGen class */
 	RandomGenerator rgen = new RandomGenerator();
+	
 	/*Instance variables*/
 	private int INITIALATOMS=10000;
 	private Double DECAYRATE=0.5;
+
 }
