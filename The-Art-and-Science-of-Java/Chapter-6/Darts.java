@@ -1,4 +1,4 @@
-/* Toy program that simulates darts thrown at a target 10k times. 
+/* Toy program that simulates darts thrown at a target 1KK times. 
  * The target is a circle on a square background. 
  * The limit of the ratio between darts hitting the target
  * is pi. The program empirically estimates pi based on the 
