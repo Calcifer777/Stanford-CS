@@ -30,8 +30,8 @@ public class RadioActiveDecay extends ConsoleProgram {
 			
 			atomsRemaining-=annualDecay;
 			year++;
-			print("There are "+atomsRemaining+" at ");
-			println("the end of year "+year+".");
+			println("There are "+atomsRemaining+" at "+
+			"the end of year "+year+".");
 			
 		}
 			
