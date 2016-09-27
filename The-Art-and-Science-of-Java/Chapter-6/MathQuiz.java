@@ -77,7 +77,7 @@ public class MathQuiz extends ConsoleProgram {
 				n2 = rgen.nextInt(1, 20);
 				
 				/* Controlling for the appropriateness of the 
-				 * two numbers. If the sum is greater than 20
+				 * two numbers. If the sum is less than 0
 				 * re-roll the numbers.
 				 */
 				
