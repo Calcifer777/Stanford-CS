@@ -19,7 +19,7 @@ public class SentencePalindrome extends ConsoleProgram {
 			// println("First character: "+sentence.charAt(0)+";");
 			// println("Sentence length: "+sentence.length()+";");
 			
-			println("This sentece is"+(isPalindrome(sentence)?"":" not")+" a palyndrome;");
+			println("This sentece is"+(isPalindrome(sentence)?"":" not")+" a palindrome;");
 					
 		}
 				
@@ -32,7 +32,7 @@ public class SentencePalindrome extends ConsoleProgram {
 		
 		/* Checks if the sentence is empty*/
 		
-		if (sentence=="") return true;
+		if (sentence=="" || sentence.length()<2) return true;
 		
 		/* Cleans the sentence of its delimiters */
 		
