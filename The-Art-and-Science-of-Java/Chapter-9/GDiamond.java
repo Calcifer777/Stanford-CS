@@ -27,5 +27,3 @@ public class GDiamond extends GPolygon {
 	}
 
 }
-
-
