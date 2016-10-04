@@ -4,7 +4,7 @@ import acm.util.RandomGenerator;
 import acm.graphics.*;
 import java.awt.*;
 
-public class ColoredLabel extends GraphicsProgram {
+public class RandomColorLabel extends GraphicsProgram {
 	
 	public void run() {
 		
