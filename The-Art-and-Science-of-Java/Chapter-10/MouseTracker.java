@@ -1,7 +1,10 @@
 
 import acm.program.*;
 import acm.graphics.*;
-import java.awt.event.MouseEvent;;
+import java.awt.event.MouseEvent;
+
+/* Tracks the mouse movements inside the applet window and returns a label with 
+ * cursor location (in java coordinates) */
 
 public class MouseTracker extends GraphicsProgram {
 	
@@ -12,11 +15,15 @@ public class MouseTracker extends GraphicsProgram {
 		addMouseListeners();
 	}
 	
+	/* Stes up the window dimensions */
+	
 	public void run() {
 		
 		setSize(800, 450);
 		
 	}
+	
+	/* Called when the mouse is moved */
 	
 	public void mouseMoved(MouseEvent e) {
 		tracker.setLabel("("+e.getX()+", "+e.getY()+")");
@@ -24,6 +31,7 @@ public class MouseTracker extends GraphicsProgram {
 		add(tracker);
 	}
 	
+	/* Instance variables */
 	private GLabel tracker = new GLabel("");
 	
 }
