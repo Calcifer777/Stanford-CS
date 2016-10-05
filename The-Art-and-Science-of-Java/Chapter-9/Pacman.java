@@ -3,15 +3,23 @@ import acm.program.*;
 import acm.graphics.*;
 import java.awt.Color;
 
+/* Draws pacman at the center of the applet and moves it left to right.
+ * Pacman's mouth opens and closes as Pacman moves.
+ */
+
 public class Pacman extends GraphicsProgram {
 	
 	public void run() {
+		
+		/* Sets the applet dimensions */
 		
 		setSize(WINDOW_WIDTH, WINDOW_HEIGHT);
 		
 		GCanvas gc = new GCanvas();
 		
 		gc.setSize(WINDOW_WIDTH, WINDOW_HEIGHT);
+		
+		/* Pacman */
 		
 		GArc pacman = new GArc(ray, ray, 40, 280);
 		pacman.setFilled(true);
@@ -22,13 +30,18 @@ public class Pacman extends GraphicsProgram {
 		
 		int flag = -1; // Changes the mouth from opening to closing and vice versa  
 		
+		/* Loop that moves pacman */
+		
 		while (true) {
 			
-			/* Move pacman */
+			/* Moves pacman */
 			
 			pacman.move(dx,0);
 			
 			pause(pauseTime);
+			
+			/* If Pacman goes further than the outer applet bound,
+			 * returns it to the left bound. */
 			
 			if (pacman.getX()+pacman.getWidth()>gc.getWidth()) {
 				
@@ -36,10 +49,7 @@ public class Pacman extends GraphicsProgram {
 						(gc.getHeight()-pacman.getWidth())/2);
 			}
 			
-			/* Move pacman mouth*/
-			
-			
-			println(pacman.getStartAngle());
+			/* Moves pacman mouth*/
 			
 			if (pacman.getStartAngle()>=45 || pacman.getStartAngle()<=0) {
 				flag*=-1;
