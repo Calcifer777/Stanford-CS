@@ -2,6 +2,8 @@
 import acm.program.*;
 import acm.graphics.*;
 
+/* Uploads an image to display in the applet */
+
 public class NewImage extends GraphicsProgram {
 	
 	public void run() {
