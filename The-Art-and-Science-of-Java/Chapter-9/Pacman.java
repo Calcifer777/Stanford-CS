@@ -65,10 +65,10 @@ public class Pacman extends GraphicsProgram {
 	
 	/* Instance variables */
 	
-	private int ray = 70;
-	private int dx = 3;
-	private int pauseTime = 10;
-	private int deltaAngle = 1;
+	private int ray = 70;		// Radius of Pacman
+	private int dx = 3;		// Distance covered each loop iteration
+	private int pauseTime = 10;	// Pause time between each iteration
+	private int deltaAngle = 1;	// How much (in degrees) the angle of the mouth moves each iteration
 	
 	/* Constants */
 	
