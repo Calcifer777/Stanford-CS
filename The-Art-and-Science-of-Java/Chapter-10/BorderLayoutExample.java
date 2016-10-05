@@ -3,6 +3,7 @@ import acm.program.*;
 import java.awt.*;
 import javax.swing.*;
 
+/* Example of the borderlayout manager */
 
 public class BorderLayoutExample extends Program {
 
