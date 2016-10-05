@@ -1,15 +1,9 @@
 
 import acm.graphics.*;
 
-/**
-* Defines a new GObject class that displays a calendar of a month.
-*/
-
 public class GCalendar extends GCompound{
 	
-	/**
-	* Creates a new GStar centered at the origin with the specified
-	* horizontal width,
+	/** Defines a new GObject class that displays a calendar of a month.
 	* @param width The width of the object
 	* @param height The width of the object
 	* @param days The days in the month
@@ -38,8 +32,13 @@ public class GCalendar extends GCompound{
 		
 		int dayLabelHeight = (int) height/8;
 		int gridHeight = (int) height-dayLabelHeight;
+		
+		/* Size of each calendar cell. Converted to integers 
+		 * otherwise some vertical lines might appear thicker */
+		
 		int cellHeight = (int) gridHeight/rows;
 		int cellWidth = (int) width/7;
+		
 		int fontSize = (int) 2*cellHeight/7;
 		String font = "Sansserifs-bold-"+fontSize;
 		
@@ -86,20 +85,17 @@ public class GCalendar extends GCompound{
 			
 		}
 		
-
-		/* Size of each calendar cell. Converted to integers 
-		 * otherwise some vertical lines might appear thicker */
+		/* Draws the grid */
 		
 		for (int i = 1; i<=7 ; i++) { // i is the row number 	
 			
 			for (int j = 1; j<=rows ; j++) { 	// j is the column number
 				
-				/* The calendar */
+				/* Adds the cells */
 				
 				add( new GRect((i-1)*cellWidth,dayLabelHeight+(j-1)*cellHeight, cellWidth, cellHeight) );
 				
-				/* Number of the day */ 
-				
+				/* Adds the number of the day */ 
 				
 				if ( (i>= firstDay || j>1) && i+7*(j-1)-firstDay+1<=days ){
 				
