@@ -14,6 +14,8 @@ import acm.program.GraphicsProgram;
 * This program creates a five-pointed star every time the user clicks the
 * mouse on the canvas. This version includes a JButton to clear the screen,
 * a JSlider to choose the size, and a JComboBox to choose the color.
+* 
+* With respect to version 1, this program has a reference to the LabeledColor class.
 */
 
 public class DrawStarMapV2 extends GraphicsProgram {
