@@ -6,14 +6,17 @@ import java.awt.Color;
 import java.awt.event.*;
 import java.lang.reflect.Constructor;
 
+/* Allows to draw shapes on the applet window. 
+ * The types of shapes that can be drawn (rectangle, oval, line) is displayed on the left of the applet.
+ * On mouse dragged if moves the shape on the applet.
+ * On mouse clicked it brings the shape to the front.*/
+
 
 public class SimpleDraw extends GraphicsProgram {
 	
 	/* Initializes the program */
 
-	
 	public void run() {
-		
 		
 		/* Sets up the window dimensions */
 		
@@ -26,7 +29,6 @@ public class SimpleDraw extends GraphicsProgram {
 		double iconHeight = height/(SHAPE_TYPES*2);
 		double figureHeight = iconHeight*4/5;
 		double lineSize = figureHeight*4/5;
-		
 		
 		for (int i = 0; i < SHAPE_TYPES; i++) {
 			
@@ -81,15 +83,13 @@ public class SimpleDraw extends GraphicsProgram {
 						iconHeight/2+2*(iconHeight)*i + (iconHeight- lineSize)/2+lineSize);
 				add(iconLine);
 				break;
-				
-				
-				
+		
 			}
 		}
 
 	}	
 		
-		/* Calling the mouse listener */
+	/* Calling the mouse listener */
 	
 	public void init() {
 		
@@ -103,15 +103,16 @@ public class SimpleDraw extends GraphicsProgram {
 	
 		last = new GPoint(e.getPoint());
 		
+		/* Records the type of object last selected */
+		
 		gobj = getElementAt(last);
 		
-		/* Records the type of object last selected */
+		/* If one of the icons is clicked, changes the shape that will be drawn */
 		
 		if (gobj == iconRectFill || gobj == iconOvalFill || 
 				gobj == iconRect || gobj == iconOval ) {
 				
 			selection = getElementAt(last);
-			println(selection.toString());
 			
 		} else if ( iconLine.getBounds().contains(last)) { 
 			
@@ -121,37 +122,37 @@ public class SimpleDraw extends GraphicsProgram {
 		}
 		
 		
+		/* If the mouse is pressed on an empty spot, it draws a new shape,
+		 * based on which icon was previously selected. */
 		
-		/* Draws a new shape */
-		
-		if(gobj==null && selection==iconRectFill) { 		// Start drawing a filled rectangle
+		if(gobj==null && selection==iconRectFill) { 		// Starts drawing a filled rectangle
 			
 			newRect = new GRect(e.getX(), e.getY(), 0, 0);
 			newRect.setFilled(true);
 			newRect.setFillColor(Color.blue);
 			add(newRect);
 			
-		} else if (gobj==null && selection==iconOvalFill) { // Start drawing a filled oval
+		} else if (gobj==null && selection==iconOvalFill) { 	// Starts drawing a filled oval
 			
 			newOval = new GOval(e.getX(), e.getY(), 0, 0);
 			newOval.setFilled(true);
 			newOval.setFillColor(Color.red);
 			add(newOval);
 			
-		} else if(gobj==null && selection==iconRect) {	// Start drawing an empty rectangle
+		} else if(gobj==null && selection==iconRect) {		// Starts drawing an empty rectangle
 			
 			newRect = new GRect(e.getX(), e.getY(), 0, 0);
 			newRect.setColor(Color.blue);
 			newRect.setFilled(false);
 			add(newRect);
 			
-		} else if (gobj==null && selection==iconOval) {	// Start drawing an empty oval
+		} else if (gobj==null && selection==iconOval) {		// Starts drawing an empty oval
 			
 			newOval = new GOval(e.getX(), e.getY(), 0, 0);
 			newOval.setColor(Color.red);
 			add(newOval);
 			
-		} else if (gobj==null && selection==iconLine) {	// Start drawing a line
+		} else if (gobj==null && selection==iconLine) {		// Starts drawing a line
 			
 			newLine = new GLine(e.getX(), e.getY(), e.getX(), e.getY());
 			newLine.setColor(Color.green);
@@ -160,7 +161,8 @@ public class SimpleDraw extends GraphicsProgram {
 		
 	}
 	
-	/* Called on mouse drag to reposition the object */
+	
+	/* Called on mouse drag to draw or reposition the object */
 	
 	public void mouseDragged(MouseEvent e) {
 	
@@ -170,6 +172,7 @@ public class SimpleDraw extends GraphicsProgram {
 		double width =  (last.getX()<e.getX())?		e.getX()-last.getX()	: 	last.getX() - e.getX();
 		double height =  (last.getY()<e.getY())?	e.getY()-last.getY()	:	last.getY() - e.getY();
 
+		/* If a shape has been initialized, dragging the mouse changes teh dimensions of the shape */
 
 		if(gobj==null && (selection==iconRectFill || selection==iconRect ) ) {
 			
@@ -185,6 +188,7 @@ public class SimpleDraw extends GraphicsProgram {
 			
 		}
 		
+		/* If no shapes are being drawn, it moves the object */
 		
 		if(gobj!=null && gobj != iconRectFill && gobj != iconOvalFill 
 				&& gobj!=iconRect && gobj!=iconOval && gobj!=iconLine) {
@@ -197,7 +201,7 @@ public class SimpleDraw extends GraphicsProgram {
 	}
 	
 	
-	/* Called on mouse click to move this object to the front */
+	/* Called on mouse click to move the object to the front */
 	
 	public void mouseClicked(MouseEvent e) {
 		
@@ -213,11 +217,11 @@ public class SimpleDraw extends GraphicsProgram {
 	GOval iconOval;			// Empty oval icon
 	GLine iconLine;			// Line icon
 	
-	GPoint last;			// Record the cursor location when last pressed
+	GPoint last;			// Records the cursor location when last pressed
 	GObject gobj;			// Last selected object 
 	GObject selection;		// Determines what shape to draw
 	
-	GRect newRect;
+	GRect newRect;			// Draws one of these shapes
 	GOval newOval;
 	GLine newLine;
 	
