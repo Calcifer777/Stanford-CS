@@ -10,6 +10,8 @@ public class PumpkinPie extends GraphicsProgram {
 	
 	public void run() {
 		
+		/* Sets up the window dimensions */
+		
 		setSize(WINDOW_WIDTH, WINDOW_HEIGHT);
 		
 		GCanvas gc = new GCanvas();
@@ -26,13 +28,16 @@ public class PumpkinPie extends GraphicsProgram {
 	
 	/** Creates a pumpkin pie centered at the origin
 	 * @param ray The ray of the pie
-	 * @param n The number of sections of the pie */
+	 * @param sections The number of sections of the pie 
+	 * @param sections The fill color of the pie */
 	
 	private GCompound createPumpkinPie(double ray, int sections, Color color) {
 		
 		GCompound pie = new GCompound();
 		
 		for (int i = 0 ; i <= sections - 1 ; i++) {
+			
+			/* Draws n[=sections] arcs each sweeping 360/n of the circle */
 			
 			GArc arc = new GArc(2*ray, 2*ray, 360/sections*i, 360/sections );
 			arc.setFilled(true);
