@@ -153,7 +153,7 @@ public class Breakout extends GraphicsProgram {
 	
 	/** Returns any objects colliding with the ball. Returns any object colliding
 	 * with the ball. Returns null is no object is found.
-	 * @param ball The object to be checked for collisions  */ 
+	 */ 
 	private GObject getCollidingObject() {
 		
 		for (int i = 0; i <=1 ; i++) {
