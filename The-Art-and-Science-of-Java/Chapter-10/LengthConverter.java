@@ -3,9 +3,10 @@ import acm.gui.*;
 import acm.program.*;
 import java.awt.event.*;
 import java.util.*;
-
 import javax.swing.*;
 
+/** This program displays a lenght converter of several unit measures. It gives the 
+ * third decimal digit approximation of the conversion.*/
 public class LengthConverter extends Program {
 	
 	public void init() {
@@ -118,10 +119,11 @@ public class LengthConverter extends Program {
 			String unit1 = leftChooser.getSelectedItem().toString();
 			//	System.out.println("unit1"+unit1);
 			String unit2 = rightChooser.getSelectedItem().toString();
-			// System.out.println("unit2"+unit2);
+			//	System.out.println("unit2"+unit2);
 			double n1 = leftField.getValue();
 			double n = converter(n1,unit1,unit2);
-			rightField.setValue(n);
+			int nToInteger = (int) (n*10^APPROX_DIGIT);
+			rightField.setValue((double) nToInteger/(10^APPROX_DIGIT));	// approximate to the nth decimal digit
 			
 		} else if(cmd.equals(rightButton)&& !rightField.getText().equals("")) {
 			
@@ -129,7 +131,8 @@ public class LengthConverter extends Program {
 			String unit2 = leftChooser.getSelectedItem().toString();
 			double n1 = rightField.getValue();
 			double n =converter(n1,unit2,unit1);
-			leftField.setValue(n);
+			int nToInteger = (int) (n*(10^APPROX_DIGIT));			// approximate to the nth decimal digit
+			leftField.setValue((double) nToInteger/(10^APPROX_DIGIT));
 		}
 		
 		
@@ -149,4 +152,5 @@ public class LengthConverter extends Program {
 	 * inches.*/
 	private static final String UNITS= "Inches, 1;  Feet, 12;  Yards, 36; Fathoms, 72;"+
 			"Rods, 198; Furlongs , 7920; Miles, 63360";
+	private static final APPROX_DIGIT = 3;
 }
