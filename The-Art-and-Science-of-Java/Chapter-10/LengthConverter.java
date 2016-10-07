@@ -128,7 +128,7 @@ public class LengthConverter extends Program {
 			String unit1 = rightChooser.getSelectedItem().toString();
 			String unit2 = leftChooser.getSelectedItem().toString();
 			double n1 = rightField.getValue();
-			double n =converter(n1,unit1,unit2);
+			double n =converter(n1,unit2,unit1);
 			leftField.setValue(n);
 		}
 		
