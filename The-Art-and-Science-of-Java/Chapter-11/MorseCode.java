@@ -19,16 +19,14 @@ public class MorseCode extends ConsoleProgram {
 	private String textToMorse(String str) {
 
 		int length = str.length();
-
 		String morse = "";
-		int index = -1;
 
 		for (int i = 0 ; i < length - 1; i++) { 			// Reads each character in the input text
 
 			String ch = str.substring(i, i + 1).toUpperCase();
 			index = -1;
 
-			for (int j = 0; j < MORSE_CODE.length; j++ ) {	// Searches the character in the morse array
+			for (int j = 0; j < MORSE_CODE.length; j++ ) {		// Searches the character in the morse array
 
 				if (ch.equals(MORSE_CODE[j][0])) {
 					
@@ -41,8 +39,8 @@ public class MorseCode extends ConsoleProgram {
 
 			}
 
-			if (index == -1) {								// Adds the morse code to the output string
-				morse += " ";								// if a space is found returns a double space
+			if (index == -1) {					// Adds the morse code to the output string
+				morse += " ";					// if a space is found returns a double space
 			} else if (index!=-2) {
 				morse += MORSE_CODE[index][1];
 			}
