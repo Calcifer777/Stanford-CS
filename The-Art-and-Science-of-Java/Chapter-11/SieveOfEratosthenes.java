@@ -1,6 +1,6 @@
 
-/* Program that generates a list of primes in
- * the first N numbers.*/
+/* Generates and displays the list of primes in the first N numbers;
+ * it uses the Sieve of Erathostenes method. */
 
 import acm.program.*;
 
@@ -9,7 +9,7 @@ public class SieveOfEratosthenes extends ConsoleProgram {
 
 	public void run() {
 
-		/* Initializing the array */
+		/* Initializes the array of the first N numbers */
 
 		for (int i = 0; i < list.length; i++) {
 
@@ -36,9 +36,9 @@ public class SieveOfEratosthenes extends ConsoleProgram {
 
 		int thisPrime = 0;
 
-		for ( int index = 0; index < list.length; index++) {
+		for ( int index = 0; index < list.length; index++) { // For each prime, set to 0 all the multiples of that prime;
 
-			if (list[index] != 0) {
+			if (list[index] != 0) {			
 				
 				thisPrime = list[index];
 			
@@ -52,9 +52,6 @@ public class SieveOfEratosthenes extends ConsoleProgram {
 
 		return list;
 	}
-
-
-
 
 	/* Private instance variables */
 	int[] list = new int[N];
