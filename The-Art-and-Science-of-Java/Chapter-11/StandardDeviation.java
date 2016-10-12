@@ -1,10 +1,15 @@
 import acm.program.*;
 import acm.util.*;
 
+/* Computes the sample standard deviation of a series of randomly generated numbers */
 public class StandardDeviation extends ConsoleProgram {
 
 	public void run() {
 
+		println("Creating an array of "+list.length+" numbers with the "+
+		       "RandomGenerator method.");
+		println("");
+		
 		for (int i = 0; i <= list.length-1; i++) {
 
 			list[i] = rgen.nextDouble(1, 1000);
@@ -47,15 +52,11 @@ public class StandardDeviation extends ConsoleProgram {
 	}
 
 	/* Random Generator */
-
 	RandomGenerator rgen = new RandomGenerator();
 
-	/**/
 	/* Private instance variables */
-
 	double[] list = new double[LENGTH];
 
 	/* Constants */
-
 	private static final int LENGTH = 200;
 }
