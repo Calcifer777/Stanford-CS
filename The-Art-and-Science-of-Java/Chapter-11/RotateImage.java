@@ -52,19 +52,16 @@ public class RotateImage extends GraphicsProgram {
 	
 	private GImage rotateLeft(GImage image) {
 		
+		/* Creates a bidimensional int array from the image */
 		int[][] array = image.getPixelArray();
 		
- 
+ 		/* Creates a bidimensional int array for the rotated image;
+		 * width and height are reversed compared to the original image. */
 		int imageHeight =  array.length;
 		int imageWidth =  array[0].length;
-		
-		print("Image size: h "+ imageHeight+"; w "+ imageWidth);
-		
 		int[][] rotatedArray = new int[imageWidth][imageHeight];
 
-		
-		print("Image size: h "+ imageWidth+"; w"+imageHeight);
-		
+		/* Setting the values for the rotated image */
 		for (int row = 0 ; row < imageWidth; row++) {
 			for (int col = 0; col < imageHeight; col++) {
  
