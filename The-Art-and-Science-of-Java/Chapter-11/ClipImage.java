@@ -4,10 +4,15 @@ import java.awt.*;
 import java.awt.event.KeyEvent;
 import java.awt.event.MouseEvent;
 
+/* Imports and image, and allows to select a rectangular portion of it. It then displays the selection.
+ * Press Enter to reset the image on the applet window
+ * Press Esc to exit the program */
+
 public class ClipImage extends GraphicsProgram {
 	
 	public void init() {
 		
+		/* Importing the image and getting the related int array*/
 		image = new GImage(IMAGE);
 		array = image.getPixelArray();
 
