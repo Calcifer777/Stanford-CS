@@ -1,20 +1,22 @@
 import acm.program.*;
 import java.util.*;
 
+
+/* Returns the average of a series of input numbers/scores. */
 public class AverageScores extends ConsoleProgram {
 	
 	public void run() {
 
 		ArrayList<Integer> scores = new ArrayList<Integer>();
 
-		/* Read the judge scores and store them in an array */
+		/* Reads the judge scores and stores them in an array */
 		for (int i = 1; i<= N_JUDGES ; i++) {
 			scores.add( readInt("Enter the score for judge "+i+" : "));
 		}
 
 		println(scores.toString());
 
-		/* Computing the average score */ 
+		/* Computes the average score */ 
 
 		Collections.sort(scores);
 		
